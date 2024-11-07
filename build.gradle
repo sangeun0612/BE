@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.3.2'
     id 'io.spring.dependency-management' version '1.1.6'
+    id 'com.github.sherter.google-java-format' version '0.9'
 }
 
 group = 'com.iiie'
@@ -11,6 +12,11 @@ java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
     }
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
 }
 
 configurations {
@@ -30,8 +36,19 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // MySQL Driver
+    runtimeOnly 'com.mysql:mysql-connector-j'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+googleJavaFormat {
+    toolVersion = "1.7"
+}
+
+tasks.named("check") {
+    dependsOn "googleJavaFormat"
 }
