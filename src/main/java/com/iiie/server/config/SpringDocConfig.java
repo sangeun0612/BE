@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SpringDocConfig {
 
-    @Bean
-    public GroupedOpenApi api(){
-        return GroupedOpenApi.builder().group("api").pathsToExclude("/api/**").build();
-    }
+  @Bean
+  public GroupedOpenApi api() {
+    return GroupedOpenApi.builder().group("api").pathsToExclude("/api/**").build();
+  }
 }
