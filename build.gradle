@@ -39,6 +39,10 @@ dependencies {
 
     // MySQL Driver
     runtimeOnly 'com.mysql:mysql-connector-j'
+
+    // Soring Doc
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
+
 }
 
 tasks.named('test') {
