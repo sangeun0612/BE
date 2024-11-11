@@ -11,18 +11,18 @@ import lombok.Setter;
 @Schema(description = "성공 응답 구조")
 public class SuccessResponse<T> {
 
-    @Schema(description = "응답 상태", example = "success")
-    private String status;
+  @Schema(description = "응답 상태", example = "success")
+  private String status;
 
-    @Schema(description = "응답 메시지", example = "Request processed successfully")
-    private String message;
+  @Schema(description = "응답 메시지", example = "Request processed successfully")
+  private String message;
 
-    @Schema(description = "응답 데이터")
-    private T data;
+  @Schema(description = "응답 데이터")
+  private T data;
 
-    public SuccessResponse(String status, String message, T data) {
-        this.status = status;
-        this.message = message;
-        this.data = data;
-    }
+  public SuccessResponse(String status, String message, T data) {
+    this.status = status;
+    this.message = message;
+    this.data = data;
+  }
 }
